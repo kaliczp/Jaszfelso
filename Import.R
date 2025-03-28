@@ -14,4 +14,4 @@ library(xts)
 Jaszfelso.xts <- xts(JaszfelsoGrid[,2], GridDate)
 plot(Jaszfelso.xts['1991/2020'])
 
-summary(apply.yearly(Jaszfelso.xts, sum))
+summary(apply.yearly(Jaszfelso.xts['1991/2020'], sum))
