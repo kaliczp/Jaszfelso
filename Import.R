@@ -9,3 +9,9 @@ names(alldata) <- fejlec
 JaszfelsoGrid <- alldata[,c("Date", "700")]
 GridDate <- seq.Date(from = as.Date("1971-01-01"), to = as.Date("2023-12-31"), by = "days")
 plot(GridDate, JaszfelsoGrid[,2], type = "l")
+## Time-series
+library(xts)
+Jaszfelso.xts <- xts(JaszfelsoGrid[,2], GridDate)
+plot(Jaszfelso.xts['1991/2020'])
+
+summary(apply.yearly(Jaszfelso.xts, sum))
